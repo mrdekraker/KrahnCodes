@@ -3,18 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTML & CSS Coding Club Lesson 1</title>
+    <title>Coding Club Lesson 1</title>
     <style>
+      html {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
       body {
+        display: flex;
+        flex-direction: column;
         font-family: Arial, sans-serif;
         background-color: #f4f4f4;
-        padding: 20px;
+        margin: 0;
+        padding: 2rem;
       }
+
       header {
-        text-align: center;
+        /* border: 2px solid black; */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
         background-color: #333;
-        color: #fff;
+        text-align: center;
         padding: 20px 0;
+        color: #fff;
+      }
+
+      header h1 {
+        padding: 0 1rem;
+      }
+
+      header img {
+        width: 200px;
       }
       nav {
         margin: 20px 0;
@@ -25,6 +48,10 @@
         color: #333;
         margin: 0 10px;
       }
+      nav a:hover {
+        text-decoration: underline;
+      }
+
       section {
         background-color: #fff;
         padding: 20px;
@@ -46,14 +73,43 @@
         background-color: #333;
         color: #fff;
       }
+      details {
+        margin-bottom: 10px;
+      }
+      summary {
+        font-size: 1.25rem;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      summary::before {
+        content: none;
+        display: inline-block;
+        margin-right: 10px;
+        transition: transform 0.2s;
+      }
+
+      @media (max-width: 600px) {
+        header {
+          flex-direction: column;
+        }
+        header img {
+          height: auto;
+          width: 150px;
+        }
+      }
     </style>
   </head>
   <body>
     <header>
+      <img src="../assets/krahn-namplate.png" alt="Krahn Elementary" />
       <h1>Coding Club Lesson 1: Introduction to HTML</h1>
     </header>
 
     <nav>
+      <a href="../index.html">Home</a>
       <a href="#materials">Materials</a>
       <a href="#warmup">Warm-up</a>
       <a href="#class-activity">Class Activity</a>
@@ -62,90 +118,128 @@
       <a href="#extra">Extra Activities</a>
     </nav>
 
-    <section id="materials">
-      <h2>Materials Needed</h2>
-      <ul>
-        <li>Skill Struck platform</li>
-        <li>Student computing devices</li>
-      </ul>
-    </section>
+    <details id="materials">
+      <summary>Materials Needed</summary>
+      <section>
+        <h2>Materials Needed</h2>
+        <ul>
+          <li>Skill Struck platform</li>
+          <li>Student computing devices</li>
+        </ul>
+      </section>
+    </details>
 
-    <section id="warmup">
-      <h2>Warm-up: What is an Algorithm?</h2>
-      <p>
-        Explain to students that an algorithm is like a set of instructions or
-        steps to follow in order to complete a task. Ask them to think of
-        examples from their daily lives or games they enjoy.
-      </p>
-      <p><strong>Duration:</strong> 5 minutes</p>
-    </section>
+    <details id="standards">
+      <summary>CTSA Standards</summary>
+      <section>
+        <h2>CTSA Standards</h2>
+        <ul>
+          <li>
+            1B-AP-11: Decompose (break down) problems into smaller, manageable
+            subproblems to facilitate the program development process.
+          </li>
+          <li>
+            1B-AP-12: Modify, remix, or incorporate portions of an existing
+            program into one's own work, to develop something new or add more
+            advanced features.
+          </li>
+          <li>
+            1B-AP-15: Test and debug (identify and fix errors) a program or
+            algorithm to ensure it runs as intended.
+          </li>
+          <li>
+            1B-AP-08: Compare and refine multiple algorithms for the same task
+            and determine which is the most appropriate.
+          </li>
+          <li>
+            1b-AP-10: Create programs that include sequences, events, loops, and
+            conditionals.
+          </li>
+        </ul>
+      </section>
+    </details>
 
-    <section id="class-activity">
-      <h2>Class Activity: Algorithm Dances</h2>
-      <p>
-        Choose a simple dance (e.g., "Cha Cha Slide") or create one yourself.
-        Break down the dance into steps and explain that the sequence of steps
-        forms an algorithm. Have students practice and then create their own
-        dance routines with algorithms.
-      </p>
-      <p><strong>Example Instruction for "Cha Cha Slide":</strong></p>
-      <ul>
-        <li>Start with your feet together.</li>
-        <li>Take your left foot and step to the left.</li>
-        <li>Slide your right foot to meet your left foot.</li>
-        <li>Hop, etc.</li>
-      </ul>
-      <p><strong>Duration:</strong> 10 minutes</p>
-    </section>
+    <details id="warmup">
+      <summary>Warm-up: What is an Algorithm?</summary>
+      <section>
+        <h2>Warm-up: What is an Algorithm?</h2>
+        <p>
+          Explain to students that an algorithm is like a set of instructions or
+          steps to follow in order to complete a task. Ask them to think of
+          examples from their daily lives or games they enjoy.
+        </p>
+        <p><strong>Duration:</strong> 5 minutes</p>
+        <p>
+          <a href="../assets/algorithms.png" target="_blank">Algorithm</a>
+        </p>
+      </section>
+    </details>
 
-    <section id="demo">
-      <h2>HTML Demo: Hello World</h2>
-      <p>
-        Ask students to share what they notice about websites and introduce HTML
-        as the language used to build websites.
-      </p>
-      <p>Demonstrate the basics of HTML using the Code Playground:</p>
-      <div class="highlight">
-        <h1>Hello World</h1>
-      </div>
-      <p>
-        Explain that <code>&lt;h1&gt;</code> is the opening tag and
-        <code>&lt;/h1&gt;</code> is the closing tag. Anything between them will
-        appear on the website.
-      </p>
-      <p><strong>Duration:</strong> 10 minutes</p>
-    </section>
+    <details id="class-activity">
+      <summary>Class Activity: Algorithm Dances</summary>
+      <section>
+        <h2>Class Activity: Algorithm Dances</h2>
+        <p>
+          Choose a simple dance (e.g., "Cha Cha Slide") or create one yourself.
+          Break down the dance into steps and explain that the sequence of steps
+          forms an algorithm. Have students practice and then create their own
+          dance routines with algorithms.
+        </p>
+        <p><strong>Example Instruction for "Cha Cha Slide":</strong></p>
+        <ul>
+          <li>Start with your feet together.</li>
+          <li>Take your left foot and step to the left.</li>
+          <li>Slide your right foot to meet your left foot.</li>
+          <li>Hop, etc.</li>
+        </ul>
+        <details>
+          <summary>Reveal Answer</summary>
+          <ol>
+            <li>Start with your feet together.</li>
+            <li>Take your left foot and step to the left.</li>
+            <li>Slide your right foot to meet your left foot.</li>
+            <li>Hop</li>
+            <li>Take your right foot and stomp to the right.</li>
+            <li>Bring your right foot back to your left.</li>
+            <li>Take your left foot and stomp to the left.</li>
+            <li>Bring your left foot back to the right.</li>
+          </ol>
+        </details>
+        <p><strong>Duration:</strong> 10 minutes</p>
+      </section>
+    </details>
 
-    <section id="wrapup">
-      <h2>Wrap-up</h2>
-      <p>
-        Ask students to share what challenges they faced while coding and how
-        they solved them. Introduce the concept of "debugging" (finding and
-        fixing mistakes).
-      </p>
-      <p><strong>Duration:</strong> 5 minutes</p>
-    </section>
+    <details id="demo">
+      <summary>HTML Demo: Hello World</summary>
+      <section>
+        <h2>HTML Demo: Hello World</h2>
+        <p>
+          Ask students to share what they notice about websites and introduce
+          HTML as the language used to build websites.
+        </p>
+        <p>Demonstrate the basics of HTML using the Code Playground:</p>
+        <div class="highlight">
+          <h1>Hello World h1 &lt;h1&gt;Hello World&lt;/h1&gt;</h1>
+          <h2>Hello World h2</h2>
+          <h3>Hello World h3</h3>
+          <h4>Hello World h4</h4>
+          <p>Hello World p</p>
+          <h1 style="color: red">
+            Hello World h1 &lt;h1 style="color: red"&gt;Hello World
+            h1&lt;/h1&gt;
+          </h1>
+          <h2 style="color: blue">
+            Hello World h2 &lt;h2 style="color: blue"&gt;Hello World
+            h1&lt;/h2&gt;
+          </h2>
+        </div>
+      </section>
+    </details>
 
-    <section id="extra">
-      <h2>Extra Activities</h2>
-      <ul>
-        <li>
-          Extend the dance activity: Have students teach their dance to the
-          class.
-        </li>
-        <li>
-          Paper Airplane Algorithm: Write instructions for creating a paper
-          airplane.
-        </li>
-        <li>
-          Complete the Algorithm: Give students the first and last steps of an
-          activity and have them fill in the rest.
-        </li>
-      </ul>
-    </section>
+    <!-- Add other sections similarly -->
 
     <footer>
-      <p>Coding Club - Learning HTML & CSS</p>
+      <p>&copy; 2024 Coding Club. All rights reserved.</p>
     </footer>
   </body>
 </html>
