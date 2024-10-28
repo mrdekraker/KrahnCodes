@@ -28,10 +28,19 @@ body {
   top: 0;
   z-index: 1000;
   height: 60px;
+  box-shadow:
+    rgba(0, 0, 0, 0.19) 0px 10px 20px,
+    rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .navbar h1 {
   font-size: 1.5rem;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  gap: 1rem;
 }
 
 .nav-links a {
@@ -54,9 +63,6 @@ body {
   align-items: center;
   text-align: center;
   padding-bottom: 3rem;
-  box-shadow:
-    rgba(0, 0, 0, 0.19) 0px 10px 20px,
-    rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .hero-content {
@@ -123,19 +129,14 @@ footer {
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .nav-links a {
-    display: block;
-    margin: 0.5rem 0;
+  .nav-links {
+    display: none; /* Hide nav-links entirely on mobile */
   }
 
   .hero {
-    padding-top: 60px;
+    margin-top: 60px;
   }
+
   .hero h1 {
     font-size: 3rem;
   }
@@ -156,21 +157,20 @@ footer {
 
 @media (max-width: 480px) {
   .hero {
-    /* height: 60vh; */
     height: 90vh;
     background-size: 80%;
-    padding-bottom: 1rem; /* Reduce padding further on mobile */
-    justify-content: center; /* Center-align content vertically */
-    align-items: center; /* Ensure vertical alignment */
+    padding-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
   }
 
   .hero h1 {
     font-size: 2.5rem;
-    margin-bottom: 0.5rem; /* Minor adjustment to tighten spacing */
+    margin-bottom: 0.5rem;
   }
 
   .hero .join-code {
     font-size: 1.5rem;
-    margin: 0; /* Remove margin */
+    margin: 0;
   }
 }
