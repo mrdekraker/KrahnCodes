@@ -24,10 +24,10 @@ body {
   padding: 1rem 2rem;
   background-color: #333;
   color: white;
-  position: sticky; /* Keeps the navbar at the top */
+  position: sticky;
   top: 0;
   z-index: 1000;
-  height: 60px; /* Fixed height for easier spacing control */
+  height: 60px;
 }
 
 .navbar h1 {
@@ -47,8 +47,8 @@ body {
 
 /* Hero Section */
 .hero {
-  padding-top: 80px; /* Adds spacing at the top to avoid overlap */
-  height: calc(100vh - 60px); /* Subtracts the navbar height */
+  margin-top: 60px; /* Pushes hero section below the navbar */
+  height: calc(100vh - 60px); /* Adjusts height minus navbar */
   display: flex;
   justify-content: center;
   align-items: center;
