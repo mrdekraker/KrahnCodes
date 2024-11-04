@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson on HTML Headers</title>
+    <style>
+      html {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 2rem;
+      }
+
+      header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #333;
+        text-align: center;
+        padding: 20px 0;
+        color: #fff;
+      }
+
+      header h1 {
+        padding: 0 1rem;
+      }
+
+      nav {
+        margin: 20px 0;
+        text-align: center;
+      }
+      nav a {
+        text-decoration: none;
+        color: #333;
+        margin: 0 10px;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      section {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      h2,
+      h3 {
+        color: #444;
+      }
+      .highlight {
+        background-color: #f0f8ff;
+        padding: 10px;
+        border-radius: 5px;
+        font-family: monospace;
+      }
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: #fff;
+      }
+      details {
+        margin-bottom: 10px;
+      }
+      summary {
+        font-size: 1.25rem;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      @media (max-width: 600px) {
+        header {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Coding Club Lesson 2: HTML Headers</h1>
+    </header>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="#warmup">Warm-Up</a>
+      <a href="#demo">Teacher Demo</a>
+      <a href="#activity">Activity</a>
+      <a href="#wrapup">Wrap-Up</a>
+    </nav>
+
+    <details id="warmup">
+      <summary>Warm-up: Robot Directions</summary>
+      <section>
+        <h2>Warm-up: Robot Directions</h2>
+        <p>Have students write a set of instructions for a robot to follow.</p>
+        <a
+          href="../pages/algorithms.html"
+          target="_blank"
+          rel="nooperner noreferrer"
+          >Robot Directions</a
+        >
+      </section>
+    </details>
+
+    <details id="demo">
+      <summary>Teacher Demonstration: HTML Headers</summary>
+      <section>
+        <h2>Teacher Demonstration</h2>
+        <p>
+          Show examples of headers using <code>&lt;h1&gt;</code> through
+          <code>&lt;h6&gt;</code> tags. Discuss how different header levels
+          represent the hierarchy of information.
+        </p>
+        <a
+          href="../assets/cssSyntax.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Click Here For Syntax</a
+        >
+      </section>
+    </details>
+
+    <details id="activity">
+      <summary>Activity: Header Practice</summary>
+      <section>
+        <h2>Activity</h2>
+        <p>
+          Guide students to create their own headers, using various header tags.
+          Example code:
+        </p>
+        <div class="highlight">
+          <code>
+            &lt;h1&gt;Main Heading - Used for Main Title&lt;/h1&gt;<br />
+            &lt;h2&gt;Major Section Heading - Related to Main
+            Title&lt;/h2&gt;<br />
+            &lt;h3&gt;Subsection Heading under Major Section&lt;/h3&gt;<br />
+            &lt;h4&gt;Detailed Subsection under Subsection&lt;/h4&gt;<br />
+            &lt;h5&gt;Specific Detail under Detailed Subsection&lt;/h5&gt;<br />
+            &lt;h6&gt;Lowest Level Detail under Specific Detail&lt;/h6&gt;
+          </code>
+        </div>
+      </section>
+    </details>
+
+    <details id="activity">
+      <summary>Activity: CSS Syntax Practice</summary>
+      <section>
+        <h2>Activity</h2>
+        <p>
+          Guide students to add their own colors, using the previously created
+          header tags. <br />
+          Don't forget to try hexademical colors!
+          <a href="../pages/hexi.html" target="_blank" rel="noopener noreferrer"
+            >Click Here!</a
+          ><br />
+          Example code:
+        </p>
+        <div class="highlight">
+          <code>
+            &lt;h1 style="color: red"&gt;Main Heading - Used for Main
+            Title&lt;/h1&gt;<br />
+            &lt;h2 style="color: blue"&gt;Major Section Heading - Related to
+            Main Title&lt;/h2&gt;<br />
+            &lt;h3 style="color: #7FC4D3"&gt;Subsection Heading under Major
+            Section&lt;/h3&gt;<br />
+            &lt;h4 style="color: #f0f8ff" &gt;Detailed Subsection under
+            Subsection&lt;/h4&gt;<br />
+            &lt;h5 style="color: #ff00ff" &gt;Specific Detail under Detailed
+            Subsection&lt;/h5&gt;<br />
+            &lt;h6 style="color: #1337C0" &gt;Lowest Level Detail under Specific
+            Detail&lt;/h6&gt;
+          </code>
+        </div>
+      </section>
+    </details>
+    <details id="wrapup">
+      <summary>Wrap-Up</summary>
+      <section>
+        <h2>Wrap-Up</h2>
+        <p>
+          Have students share their obstacles and successes with the group.
+          Invite students to share their favorite header and color combination.
+        </p>
+      </section>
+    </details>
+
+    <footer>
+      <p>&copy; 2024 Coding Club. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robot Instructions</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(5, 50px);
+        grid-template-rows: repeat(5, 50px);
+        gap: 2px;
+        justify-content: center;
+        margin: 20px auto;
+      }
+      .cell {
+        width: 50px;
+        height: 50px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .robot {
+        background-color: lightblue;
+        border-radius: 10px;
+        font-weight: bold;
+        color: white;
+      }
+      .goal {
+        background-color: lightgreen;
+      }
+      .obstacle {
+        background-color: #ff7675;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Robot Instructions</h1>
+    <p>
+      Help the robot reach the green goal by moving it around the obstacles (in
+      red).
+    </p>
+
+    <div class="grid" id="grid"></div>
+
+    <script>
+      const gridElement = document.getElementById("grid");
+      const gridSize = 5;
+      const robotPosition = { x: 0, y: 4 }; // Starting position: bottom-left corner
+      const goalPosition = { x: 4, y: 0 }; // Goal position: top-right corner
+
+      // Function to generate random obstacles, avoiding robot's and goal's positions
+      function generateObstacles(count) {
+        const obstacles = [];
+        while (obstacles.length < count) {
+          const x = Math.floor(Math.random() * gridSize);
+          const y = Math.floor(Math.random() * gridSize);
+
+          // Avoid placing obstacles on the robot's or goal's positions
+          if (
+            !(x === robotPosition.x && y === robotPosition.y) &&
+            !(x === goalPosition.x && y === goalPosition.y) &&
+            !obstacles.some((obstacle) => obstacle.x === x && obstacle.y === y)
+          ) {
+            obstacles.push({ x, y });
+          }
+        }
+        return obstacles;
+      }
+
+      const obstacles = generateObstacles(6); // Generate 6 random obstacles
+
+      // Function to render the grid
+      function drawGrid() {
+        gridElement.innerHTML = "";
+        for (let y = 0; y < gridSize; y++) {
+          for (let x = 0; x < gridSize; x++) {
+            const cell = document.createElement("div");
+            cell.classList.add("cell");
+
+            if (x === robotPosition.x && y === robotPosition.y) {
+              cell.classList.add("robot");
+              cell.textContent = "🤖";
+            } else if (x === goalPosition.x && y === goalPosition.y) {
+              cell.classList.add("goal");
+            } else if (obstacles.some((ob) => ob.x === x && ob.y === y)) {
+              cell.classList.add("obstacle");
+            }
+
+            gridElement.appendChild(cell);
+          }
+        }
+      }
+
+      drawGrid();
+    </script>
+  </body>
+</html>

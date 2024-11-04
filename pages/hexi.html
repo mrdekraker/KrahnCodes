@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Background Color Changer</title>
+    <style>
+      body,
+      html {
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+        transition: background-color 0.5s;
+        text-align: center;
+      }
+      #description {
+        max-width: 500px;
+        font-size: 1em;
+        margin-bottom: 20px;
+        padding: 0 20px;
+      }
+      #color-display {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        border: none;
+        background-color: #333;
+        color: white;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="color-display">
+      Click the button to change the background color
+    </div>
+    <button onclick="changeBackgroundColor()">Change Color</button>
+
+    <div id="description">
+      <p>
+        Hexadecimal color codes are six-digit codes that represent colors in the
+        RGB color model. Each pair of digits in a hexadecimal code represents
+        the intensity of red, green, or blue, ranging from 00 to FF. For
+        example, <code>#FF5733</code> has high red intensity (FF), medium green
+        intensity (57), and low blue intensity (33).
+      </p>
+    </div>
+
+    <script>
+      function getRandomColor() {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+      function changeBackgroundColor() {
+        const newColor = getRandomColor();
+        document.body.style.backgroundColor = newColor;
+        document.getElementById("color-display").textContent =
+          `Background Color: ${newColor}`;
+      }
+    </script>
+  </body>
+</html>
