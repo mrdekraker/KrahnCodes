@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hardware, Software, Troubleshooting, and Debugging</title>
+    <style>
+      /* Your existing CSS styles here */
+      html {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 2rem;
+      }
+
+      header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #333;
+        text-align: center;
+        padding: 20px 0;
+        color: #fff;
+      }
+
+      header h1 {
+        padding: 0 1rem;
+      }
+
+      nav {
+        margin: 20px 0;
+        text-align: center;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #333;
+        margin: 0 10px;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      section {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      h2,
+      h3 {
+        color: #444;
+      }
+
+      .highlight {
+        background-color: #f0f8ff;
+        width: 50%;
+        padding: 10px;
+        border-radius: 5px;
+        font-family: monospace;
+      }
+
+      #twister {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      p#tongue-twister {
+        /* font-family: "Times New Roman", Times, serif; */
+        width: 30vw;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: #fff;
+      }
+
+      details {
+        margin-bottom: 10px;
+      }
+
+      summary {
+        font-size: 1.25rem;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      @media (max-width: 600px) {
+        header {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Coding Club Lesson 3: Hardware Software, Troubleshooting, and Debugging
+        (This is a h1 tag)
+      </h1>
+    </header>
+
+    <nav>
+      <a href="../index.html">Home (link tag)</a>
+      <a href="#warmup">Warm-Up (link tag)</a>
+      <a href="#demo">Teacher Demo (link tag)</a>
+      <a href="#activity">Activity (link tag)</a>
+      <a href="#wrapup">Wrap-Up (link tag)</a>
+    </nav>
+
+    <details id="warmup">
+      <summary>Warm-up: Secret Word (This is a summary tag)</summary>
+      <section>
+        <h2>Warm-up: Secret Word (This is a h2 tag)</h2>
+        <p>Have students follow the algorithm to discover the secret word.</p>
+        <ol>
+          <li>Look at the first letter of the words. (This is a li tag)</li>
+          <li>
+            If a letter appears 4 or more times in a row, write down that
+            letter. (This is a li tag)
+          </li>
+          <li>
+            If the letters are different, ignore the letter. (This is a li tag)
+          </li>
+          <li>Repeat steps 1-3 for the remaining words. (This is a li tag)</li>
+        </ol>
+        <h3>Tongue Twister (This is a h3 tag)</h3>
+        <div class="highlight" id="twister">
+          <p id="tongue-twister"></p>
+        </div>
+      </section>
+    </details>
+
+    <details id="demo">
+      <summary>Teacher Demonstration: (This is a summary tag)</summary>
+      <section>
+        <h2>Teacher Demonstration (This is a h2 tag)</h2>
+        <p>
+          Show students the computer parts, debugging, and troubleshooting
+          pdf's. (This is a p tag)
+        </p>
+        <a
+          href="../assets/computerParts.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Click Here For Computer Parts (This is a link tag)</a
+        >
+        <br />
+        <a
+          href="../assets/debugging.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Click Here For Debugging (This is a link tag)</a
+        >
+        <br />
+        <a
+          href="../assets/troubleshooting.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Click Here For Troubleshooting (This is a link tag)</a
+        >
+      </section>
+    </details>
+
+    <details id="activity">
+      <summary>Activity: Rubik's Cube(This is a summary tag)</summary>
+      <section>
+        <h2>Activity: Rubik's Cube Algorithms (This is a h2 tag)</h2>
+        <p>
+          Guide students to learn the algorithms for solving a Rubik's Cube.
+        </p>
+        <div class="highlight" id="cube">
+          <ol>
+            <h2>www.solvethecube.com</h2>
+            <h2><a href="/pages/rubik.html">Click Here</a></h2>
+          </ol>
+        </div>
+      </section>
+    </details>
+
+    <details id="wrapup">
+      <summary>Wrap-Up (This is a summary tag)</summary>
+      <section>
+        <h2>Wrap-Up (This is a h2 tag)</h2>
+        <p>
+          Have students share their obstacles and successes with the group.
+          Invite students to share their favorite header and color combination.
+        </p>
+      </section>
+    </details>
+
+    <footer>
+      <p>&copy; 2024 Coding Club. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // Fetch the tongue twister from the JSON file
+      fetch(`../assets/twister.json`)
+        .then((response) => response.json())
+        .then((data) => {
+          // Assuming the structure of the JSON is like: { "twister": "Your tongue twister here" }
+          document.getElementById(`tongue-twister`).textContent = data.twister;
+        })
+        .catch((error) =>
+          console.error(`Error fetching the tongue twister:`, error)
+        );
+    </script>
+  </body>
+</html>

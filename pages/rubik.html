@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rubik's Cube Solver</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f0f8ff;
+        color: #333;
+      }
+      h1 {
+        color: #ff6347;
+      }
+      .algorithm {
+        margin: 20px auto;
+        padding: 20px;
+        width: 80%;
+        max-width: 500px;
+        background-color: #e0f7fa;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .move {
+        font-size: 1.5em;
+        color: #00796b;
+      }
+      .tips {
+        margin-top: 30px;
+        padding: 15px;
+        background-color: #fff9c4;
+        border-radius: 8px;
+      }
+
+      #basics {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        margin: 20px auto;
+      }
+
+      #basics ul {
+        list-style-type: none;
+        padding: 0;
+        font-size: 1.2em;
+      }
+
+      #cross ul {
+        list-style-type: none;
+        padding: 0;
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Rubik's Cube Solver</h1>
+
+    <div class="tips" id="basics">
+      <h2>Each move represents 90 degrees (1 turn)</h2>
+      <ul>
+        <li><strong>U</strong> for Up</li>
+        <li><strong>D</strong> for Down (bottom)</li>
+        <li><strong>L</strong> for Left</li>
+        <li><strong>R</strong> for Right</li>
+        <li><strong>F</strong> for Front</li>
+        <li><strong>B</strong> for Back</li>
+      </ul>
+    </div>
+
+    <div class="algorithm" id="cross">
+      <h2>Step 1: The Cross</h2>
+      <ul>
+        <li>The center pieces don't move.</li>
+        <li>The cube is solved layer by layer, not face by face.</li>
+      </ul>
+      <div class="images">
+        <img src="../assets/cube/correctCross.png" alt="correct cross solve" />
+        <img
+          src="../assets/cube/incorrectCross.png"
+          alt="correct cross solve" />
+      </div>
+    </div>
+
+    <div class="algorithm">
+      <h2>Orienting the Cross</h2>
+
+      <img
+        src="../assets/cube/orientCross.png"
+        alt="adjacent sides need to be switched" />
+      <p class="move">R' U' R U R'</p>
+      <p>Cross center pieces need to be adjusted.</p>
+    </div>
+
+    <div class="algorithm">
+      <h2>Step 2: Orienting the Corners</h2>
+      <img src="../assets/cube/cornersSolved.png" alt="Solved first layer" />
+      <div class="scenarios">
+        <h3>Scenarios:</h3>
+        <ul style="list-style-type: none">
+          <img src="../assets/cube/corner1.png" alt="Scenario 1" />
+          <p class="move">F D F'</p>
+          <img src="../assets/cube/corner2.png" alt="Scenario 2" />
+          <p class="move">R' D' R</p>
+          <img src="../assets/cube/corner3.png" alt="Scenario 3" />
+          <p class="move">R' D R F D2 F'</p>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tips">
+      <h3>Did You Know?</h3>
+      <p>The Rubik's Cube has over 43 quintillion possible configurations!</p>
+    </div>
+  </body>
+</html>
